@@ -1,0 +1,76 @@
+.yuantu{
+	margin-left: 65px;
+	width: 200px;
+	height: 100px;
+	text-align: left;
+}
+.first{height: 400px;
+		width: 90%;
+		background-image: url(../img/1.jpg);
+}
+a:link,a:visited{
+		 text-decoration:none;  
+			
+		}
+		a:hover{
+		 text-decoration:underline; 
+	
+		}
+		a:active {color:blueviolet}
+		.h1{color: red;}
+		.h2{color: white;}
+		.stylehu {
+			margin-left: 65px;
+		    width: 300px;
+		    height: 300px;
+		    float: left;
+		    background-image: url(../img/a0.jpg);
+		    padding-top: 100px;
+		  }
+		 .stylebo{width: 300px;
+			 height: 300px;
+			 background-image: url(../img/b0.jpg); 
+			 float: right;
+			 padding-top: 100px;
+			 margin-right: 65px;
+		 }	
+		 .stylehua{
+		 	width: 300px; 
+		 	height: 300px; 
+		 	
+		 	background-image: url(../img/h0.jpg);
+		 	padding-top: 100px;
+		 	align-content: center;
+		 }
+		 .fenzhi{
+		 	margin-bottom: 70px;
+		 }
+		 #upyi{
+		 	margin-left: 40%;
+		 	margin-top: -90px;
+		 	height: 20px;
+		 }
+		 .zhuce{
+		 	float: right;
+		 	color: red;
+		 	margin-left: 10px;
+		 	font-family: "Helvetica";
+		 }
+		 .denglu{
+		 	float: right;
+		 	color: red;
+		 	padding-left: 8px;
+		 }
+		 A:link{text-decoration:none;}
+	
+		
+		 
+		
+
+
+
+
+
+
+
+
