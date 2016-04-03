@@ -10,7 +10,8 @@ exports.create = function(req,res){
     sql=sql+"'"+q_username+"'"
     db.query(sql, function (err,r) {
         if(err){
-            res.end('{"res":2004,"msg":"pgsql error!!"}')
+            console.log(err)
+	    res.end('{"res":2004,"msg":"pgsql error!!"}')
             return
         }
         else {
@@ -19,7 +20,7 @@ exports.create = function(req,res){
                 return
             }
             else if(r.rowCount==0){
-                console.log("该用户名未被使用，可以注册")
+                console.log("该用户名: "+q_username+" 未被使用，可以注册")
                 var sql1 ="insert into users(username,password) values('"+q_username+"','"+q_password+"');"
                 db.query(sql1, function (err,r) {
                     if(err){
@@ -90,9 +91,11 @@ exports.login = function(req,res){
                 return
             }
             else {
-                if (r.rowCount==1){
+                res.setHeader("Access-Control-Allow-Origin","*")
+		if (r.rowCount==1){
                     res.end('{"res":0,"msg":"login OK!!"}')
-                    return
+                    console.log("user: "+q_username+"  login!!")
+		    return
                 }
                 else if(r.rowCount==0){
                     res.end('{"res":1,"msg":"username or pssword error!!"}')

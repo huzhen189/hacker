@@ -23,15 +23,18 @@ var routes = require("./routes")
 var dispatch = function (req, res) {
     //routes.handles[req.path](req,res)
     var ob = url.parse(req.url)//对url进行解析，获取内容放到ob里面
-    var func = routes.handles[ob.pathname]//定义一个函数载体，根据url传过来的
+    var paname =new Array()
+    paname=ob.pathname
+    console.log("\n pathname is:" ,paname.slice(4))
+    var func = routes.handles[paname.slice(4)]//定义一个函数载体，根据url传过来的
     if(typeof func == "undefined"){
         exhandle(req,res)
     }else{
-        func(req,res)
+	func(req,res)
     }
 }
 var http = require("http")
-port = 3000
+port = 3000 
 srv = http.createServer(dispatch)//当有人访问localhost:3000 端口时候，执行函数dispath
 console.log("sever listins on: " + port)
 srv.listen(port)

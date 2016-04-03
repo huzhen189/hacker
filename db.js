@@ -1,10 +1,11 @@
 
 var pg = require('pg');
-var conString = "postgres://postgres:l9yus5nn@localhost.com:5432/hacker_db";
+var conString = "tcp://postgres:l9yus5nn@localhost:5432/hacker_db";
 
 exports.query=function(){
     var client = new pg.Client(conString);
     var args = arguments
+    console.log("now into pgsql\n")
     client.connect(function(err) {
         if(args.length==2){
             client.query(args[0],function(err,r){
